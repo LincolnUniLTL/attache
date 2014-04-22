@@ -26,7 +26,7 @@ Ours runs on the Unix box that runs Voyager®. I don't even know if that product
  * [MIME::Lite](http://search.cpan.org/~rjbs/MIME-Lite-3.030/lib/MIME/Lite.pm)
  * [File::Temp](http://perldoc.perl.org/File/Temp.html)
 
- Note that there are some modules we would ideally use but didn't (CSV, Config, Logger) but we don't have admin and didn't want to go through the process of requesting them installed. I would fully support a fork that did the sensible thing.
+> Note that there are some modules we would ideally use but didn't (CSV, Config, Logger) but we don't have admin and didn't want to go through the process of requesting them installed. I would fully support a fork that did the sensible thing.
 
 * **Oracle® database**. Again, not sure if anything else is ever deployed for Voyager®, but you'd need to hack the script a bit and make sure that its Perl DBI driver is available if you were using something else.
 
