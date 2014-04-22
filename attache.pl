@@ -16,6 +16,10 @@ use MIME::Lite;
 use POSIX qw(strftime);
 use File::Temp qw(tempfile);
 
+open (LOG, ">>./logs/attache.log") or die "Couldn't open attache.log: $!";
+my ($sec, $min, $hr, $day, $mon, $year) = localtime;
+print LOG "\n*** Script started on ", sprintf("%04d-%02d-%02d %02d:%02d:%02d", 1900 + $year, $mon + 1, $day, $hr, $min, $sec), " ***\n";
+
 # >>>>>>>>> Configuration *************
 our %config;
 my $configLocation = shift;
@@ -75,5 +79,8 @@ $msg->attach(
 $msg->send()
 	or die "Couldn't send whole message: $!\n";
 # ********* Messaging <<<<<<<<<<<<<
+
+# *********** add to log file *************
+print LOG "*** Script completed for $configLocation on ", sprintf("%04d-%02d-%02d %02d:%02d:%02d", 1900 + $year, $mon + 1, $day, $hr, $min, $sec), " ***\n";
 
 1;

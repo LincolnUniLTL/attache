@@ -62,6 +62,8 @@ When you are happy and you know it, optionally add your command line into your *
     # Send monthly bibs created by Ms Cataloguer to Ms Cataloguer at 2.01pm on the 1st of the month
 	01 14 1 * * /[...]/home/voyager/attache.pl bibs_created_by_op [cataloguer_surname]
 
+Simple logs recording run start and finish times are output to ''./logs/attache.log''.
+
 Issues
 ----------
 Please report or peruse any issues, or suggest enhancements at the Github repository master:
