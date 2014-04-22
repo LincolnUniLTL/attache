@@ -1,5 +1,14 @@
 ﻿#! /usr/bin/perl
 use strict;
+
+if (!exists $ENV{'ORACLE_IS_SET'}) {
+  $ENV{'ORACLE_IS_SET'} = 'Y';
+  $ENV{'ORACLE_SID'} = 'VGER';
+  $ENV{'ORACLE_HOME'} = '/oracle/app/oracle/product/11.2.0.3/db_1';
+  $ENV{'LD_LIBRARY_PATH'} = '/oracle/app/oracle/product/11.2.0.3/db_1/lib32';
+  exec $0, @ARGV;
+}
+
 use DBI;
 require DBD::Oracle;
 use Data::Dumper;
